@@ -216,46 +216,52 @@ nav a:hover {
     z-index: 0;
 }
 
-/* Overlay opcional */
-/* Overlay do hero (mantém para não bloquear cliques) */
+/* Overlay do hero (não bloqueia cliques) */
 .hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.45);
-  z-index: 1;
-  pointer-events: none; /* garante que não bloqueia cliques */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 1;
+    pointer-events: none; /* garante que não intercepta cliques */ [web:31][web:33]
 }
 
-/* Botão do iFood como link */
+/* Botão do iFood como link (ajustado para ser bem clicável) */
 .ifood-btn {
-  display: inline-block;
-  color: #ffffff;
-  padding: 10px 18px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 600;
-  cursor: pointer;
-  font-family: 'Oswald', sans-serif;
-  font-size: 1rem;
-  border: none;
-  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ea1d2c;
+    color: #ffffff;
+    padding: 10px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1rem;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+    z-index: 3; /* fica acima do conteúdo do card */ [web:29][web:36]
 }
 
 .ifood-btn i {
-  margin-right: 6px;
+    margin-right: 6px;
+    pointer-events: none; /* clique vai para o <a>, não para o ícone */ [web:32]
 }
 
 .ifood-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    background-color: #c11622;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 .ifood-btn:active {
-  transform: translateY(0);
-  box-shadow: none;
+    transform: translateY(0);
+    box-shadow: none;
 }
 
 /* Conteúdo por cima do vídeo */
@@ -696,7 +702,7 @@ section {
 .item-header {
     display: flex;
     justify-content: space-between;
-    align-items: start;
+    align-items: center; /* ajustado de start para center */
     margin-bottom: 1.2rem;
     gap: 1rem;
 }
@@ -1134,18 +1140,18 @@ footer::before {
     padding-top: 4rem;
 }
 
-/* BOTÃO IFOOD (mantido como você passou) */
+/* BOTÃO IFOOD COM CLASSE EXTRA (mantido) */
 .ifood-btn.btn-ifood {
-  display: inline-block;
-  background-color: #ea1d2c;
-  color: #ffffff;
-  padding: 10px 18px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 600;
-  cursor: pointer;
+    display: inline-block;
+    background-color: #ea1d2c;
+    color: #ffffff;
+    padding: 10px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
 }
 
 .ifood-btn.btn-ifood i {
-  margin-right: 6px;
+    margin-right: 6px;
 }
